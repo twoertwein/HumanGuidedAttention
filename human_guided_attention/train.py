@@ -8,11 +8,9 @@ from python_tools import caching, generic
 from python_tools.generic import namespace_as_string
 from python_tools.ml import metrics, neural
 from python_tools.ml.default.neural_models import AttenuatedModalityExperts
-from python_tools.ml.default.transformations import (
-    DefaultTransformations,
-    revert_transform,
-    set_transform,
-)
+from python_tools.ml.default.transformations import (DefaultTransformations,
+                                                     revert_transform,
+                                                     set_transform)
 from python_tools.ml.evaluator import evaluator
 
 from human_guided_attention.model import Attenuated_Modality_Experts_Human
@@ -51,7 +49,6 @@ def train(args):
     # init default modules
     params = {
         "nominal": True,
-        "interval": False,
         "metric_max": True,
         "y_names": np.asarray(Y_names),
     }
