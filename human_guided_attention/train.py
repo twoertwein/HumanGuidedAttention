@@ -46,6 +46,30 @@ def train(args):
     folder = Path(name)
     print(folder)
 
+    """
+    # add your own features
+    # there are 5 family-independent folds
+    for fold in partitions.values():
+        # each with a training, valdiation and test set
+        for dataloader in fold.values():
+            # the dataloader has a list of all the data (.iterator)
+            # and a dictionary with meta data (features names and so on,
+            # .property_dict)
+            dataloader.property_dict["X_names"] = np.concatenate(
+                [dataloader.property_dict["X_names"], np.array(["new_feature"])]
+            )
+            for batch in dataloader.iterator:
+                # to align your features, you will need to use the following fields:
+                # batch["meta_id"][0], family id (negative if it is the mother)
+                # batch["meta_start"][0], start of the segment in seconds
+                # batch["meta_end"][0], end of the segment in seconds
+
+                # add new feature
+                batch["X"][0] = np.concatenate(
+                    [batch["X"][0], np.ones((batch["X"][0].shape[0], 1))], axis=1
+                )
+    """
+
     # init default modules
     params = {
         "nominal": True,

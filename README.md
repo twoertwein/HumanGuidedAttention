@@ -2,7 +2,7 @@
 The code for ["Human-Guided Modality Informativeness for Affective States"](https://dl.acm.org/doi/abs/10.1145/3462244.3481004) at ICMI 2021.
 
 ## Installation
-Python 3.9 and [poetry](https://github.com/python-poetry/poetry) are requiered.
+Python 3.9 and [poetry](https://github.com/python-poetry/poetry) are required.
 ```sh
 poetry add git+https://github.com:twoertwein/HumanGuidedAttention.git
 poetry run pip install torchvision==0.10.1+cu102 -f https://download.pytorch.org/whl/torch_stable.html
