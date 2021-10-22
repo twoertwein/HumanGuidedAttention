@@ -5,7 +5,7 @@ The code for ["Human-Guided Modality Informativeness for Affective States"](http
 Python 3.9 and [poetry](https://github.com/python-poetry/poetry) are required.
 ```sh
 poetry add git+https://github.com:twoertwein/HumanGuidedAttention.git
-poetry run pip install torchvision==0.10.1+cu102 -f https://download.pytorch.org/whl/torch_stable.html
+poetry run pip install torchvision==0.11.1+cu102 -f https://download.pytorch.org/whl/torch_stable.html
 ```
 
 To locate `human_guided_attention.train`, please use 

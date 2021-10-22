@@ -1,7 +1,7 @@
 from typing import Dict
 
 import torch
-from python_tools.ml.neural import Attenuated_Modality_Experts, cov
+from python_tools.ml.neural import Attenuated_Modality_Experts
 
 
 @torch.jit.script
@@ -25,7 +25,7 @@ def pearson_correlation(x: torch.Tensor, y: torch.Tensor) -> torch.Tensor:
             continue
         x_ = x_[:, index]
         y_ = y_[:, index]
-        covariance = cov(torch.cat([x_, y_], dim=1))
+        covariance = torch.cov(torch.cat([x_, y_], dim=1).t())
         size = x_.shape[1]
         arange = torch.arange(size)
         diagonal = covariance.diagonal().sqrt()
