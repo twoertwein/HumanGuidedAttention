@@ -1,4 +1,3 @@
-from typing import Dict
 
 import torch
 from python_tools.ml.neural import Attenuated_Modality_Experts
@@ -44,7 +43,7 @@ class Attenuated_Modality_Experts_Human(Attenuated_Modality_Experts):
         self,
         scores: torch.Tensor,
         ground_truth: torch.Tensor,
-        meta: Dict[str, torch.Tensor],
+        meta: dict[str, torch.Tensor],
     ) -> torch.Tensor:
         loss_value = super().loss(scores, ground_truth, meta)
         importance = loss_value  # avoid unbound variable
